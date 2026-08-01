@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qover.com/
+spec_type: Webhooks
+summary: >-
+  Qover supports configurable outbound webhooks. When the status of a claim
+  changes in Qover's system, Qover can call a partner-configured endpoint and
+  send the current status of the claim along with high-level claim information.
+  A typical use case is showing an in-app notification when a claim status
+  changes.
+authentication:
+  description: The receiving webhook endpoint can be secured with one of several mechanisms.
+  mechanisms:
+  - basic (username/password)
+  - api-key (header or query parameter)
+  - bearer token
+events:
+- name: claim.status.changed
+  description: Fired when a claim's status changes; delivers the current claim status and high-level claim data.
+  configurable: true
+payload:
+  content_type: application/json
+  shape:
+    id: event id
+    occurredOn: ISO 8601 timestamp
+    type: event type
+    data:
+      id: claim id
+      version: integer
+      _links: { self: { href: claim self link (HAL) } }
+      claimNumber: string
+      reference: string|null
+      productConfiguration: { id: string, version: integer, product: string }
+      country: ISO country code
+      partner: { id: string, name: string }
+      customerId: string
+      status: { code: string, category: string, name: string }
+      policyNumber: string
+  note: >-
+    Field names captured verbatim from the example webhook payload in Qover's
+    public API documentation; example values were anonymized by Qover in the docs.
+notes:
+- Webhooks are configured per partner ("We can configure various Webhook in our system").
+- No AsyncAPI document is published; this captures the documented webhook catalog.

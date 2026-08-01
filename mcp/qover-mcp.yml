@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: >-
+  Derived from operations in Qover's public API documentation (Qover API Postman
+  collection, docs.qover.com). No official hosted/remote MCP server was found.
+server:
+  name: qover
+  transport: http
+  url: null
+tools:
+- name: get_claim_schema
+  description: Retrieve the claim validation schema for a product and country.
+  source_operation: GET /claims/claim-schemas/{product}/{country}
+- name: create_claim
+  description: File a new claim.
+  source_operation: POST /claims/v1/claims
+- name: get_claim
+  description: Retrieve a claim by its id.
+  source_operation: GET /claims/v1/claims/{claimId}
+- name: get_claim_status_history
+  description: Get the status history of a claim.
+  source_operation: GET /claims/v1/claims/{claimId}/statuses
+- name: get_claim_report
+  description: Download the claim report as a PDF.
+  source_operation: GET /claims/v1/claims/{claimId}.pdf
+- name: create_asset
+  description: Create a document asset and obtain a signed upload URL for a claim attachment.
+  source_operation: POST /dam/v1/assets
+notes:
+- Candidate tool list only; not an official Qover MCP server.
+- Authentication is via API key in the request header (see authentication/qover-authentication.yml).

@@ -1,0 +1,13 @@
+generated: '2026-07-20'
+method: generated
+skills:
+- file: qover-file-a-claim.md
+  name: File and track a Qover insurance claim
+  api: https://docs.qover.com/
+  operations:
+  - get_claim_schema
+  - create_asset
+  - create_claim
+  - get_claim
+  - get_claim_status_history
+  - get_claim_report

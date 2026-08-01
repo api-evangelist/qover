@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qover.com/
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+schemes:
+- name: ApiKey
+  type: apiKey
+  in: header
+  description: >-
+    Qover's REST API authenticates with an API key that must be included in the
+    header of every request. Each API key is a unique identifier that acts as a
+    secure access token authenticating and authorizing the request. Keys are
+    issued per partner/project: Qover first grants a Sandbox API key, then - after
+    review and testing - provides a Production key through a secure protocol.
+    Keys must be kept confidential and never committed to public repositories or
+    client-side code.
+  sources:
+  - postman:docs.qover.com (Qover API collection)
+webhook_authentication:
+  description: >-
+    Outbound webhooks (claim status changes) support configurable authentication
+    on the receiving endpoint.
+  mechanisms:
+  - basic (username/password)
+  - api-key (header or query parameter)
+  - bearer token
+notes:
+- API keys are shared privately during onboarding; there is no self-serve key issuance.
+- Request an API key at https://www.qover.com/api-access

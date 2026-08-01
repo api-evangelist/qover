@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qover.com/ ; https://trust.qover.com/
+standards:
+- id: iso-27001
+  conforms: true
+  evidence: >-
+    Qover API documentation states "As an ISO certified company"; the Vanta-hosted
+    trust center at trust.qover.com lists ISO 27001.
+- id: gdpr
+  conforms: true
+  evidence: EU insurer operating across 32 European countries; publishes an EU privacy policy.
+- id: api-key-auth
+  conforms: true
+  evidence: REST API authenticates via API key in request header.
+- id: hal-hypermedia
+  conforms: true
+  evidence: Resources and webhook payloads use HAL-style `_links` with self references.
+- id: rest
+  conforms: true
+  evidence: JSON over HTTPS, URI-path versioning, resource-oriented endpoints.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error envelope documented in public docs.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 flows; authentication is API-key based.
+compliance_program:
+  published: true
+  trust_center: https://trust.qover.com/
+  certifications:
+  - ISO 27001

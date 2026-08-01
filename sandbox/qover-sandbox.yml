@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qover.com/
+summary: >-
+  Qover provides a dedicated Sandbox environment. During onboarding partners
+  receive a Sandbox API key first; after a review and testing phase a Production
+  key is issued through a secure protocol. The published API collection targets
+  the sandbox host and drives product/country behaviour through per-partner
+  configuration variables.
+environments:
+- name: sandbox
+  base_url: https://api.sbx.qover.io
+  key_type: sandbox API key (issued during onboarding)
+- name: production
+  key_type: production API key (issued after sandbox review, via secure protocol)
+  note: >-
+    Production base host is provisioned per partner (Qover's production edge is
+    fronted by Apigee, api.qover.com -> qover-prod.apigee.net); confirm the exact
+    production base URL with Qover during onboarding.
+test_configuration:
+  description: >-
+    Sandbox requests are parameterised by product and country configuration
+    (documented in the Qover API Postman collection). These are configuration
+    selectors, not secrets.
+  variables:
+  - key: env
+    value: sbx
+  - key: country
+    value: BE
+    note: ISO country code; Qover operates across 32 European countries
+  - key: product
+    value: FINTECHX
+    note: example product configuration code
+  - key: page
+    value: '1'
+  - key: size
+    note: pagination page size
+  - key: sort
+    note: sort field
+  - key: sortDirection
+    value: desc
+example_flows:
+- Retrieve a claim validation schema by product and country (GET /claims/claim-schemas/{product}/{country})
+- Create a claim (POST /claims/v1/claims)
+- Upload a claim attachment via the Document Asset Management API (POST /dam/v1/assets, then PUT to the returned upload URL)
+notes:
+- Qover does not publish standalone test card numbers or magic identifiers; the sandbox is provisioned per partner with a dedicated API key.
+- No self-serve sandbox; access is requested at https://www.qover.com/api-access

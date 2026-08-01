@@ -1,0 +1,30 @@
+# Qover
+
+> Qover is a Brussels-based insurtech providing an API-first embedded insurance orchestration platform used across 32 European countries. Brands, fintechs and insurers configure and distribute insurance products (travel, mobility, bike, purchase protection, accident, property) and run the full lifecycle from policy configuration and issuance through AI-assisted claims and multilingual customer care. Qover exposes REST APIs (Claims, Policy, Document Asset Management) secured with API keys, with a sandbox environment and configurable webhooks.
+
+## APIs
+
+- [Qover Embedded Insurance API](https://docs.qover.com/): Claims API, Policy API and Document Asset Management API. API-key auth (header), URI-path versioning (v1), sandbox base https://api.sbx.qover.io.
+
+## Docs
+
+- [API Documentation (Postman)](https://docs.qover.com/): Endpoint reference, authorization, and examples.
+- [Request API access](https://www.qover.com/api-access): Request a sandbox API key.
+- [Pricing](https://qover.com/pricing)
+- [Blog](https://qover.com/blog)
+- [Status](https://status.qover.com/): Better Stack status page.
+- [Trust Center](https://trust.qover.com/): Vanta trust center; ISO 27001 certified.
+
+## Specs & Artifacts
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/authentication/qover-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/conventions/qover-conventions.yml)
+- [Webhooks](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/asyncapi/qover-webhooks.yml)
+- [Sandbox](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/sandbox/qover-sandbox.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/lifecycle/qover-lifecycle.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/data-model/qover-data-model.yml)
+- [MCP (candidate)](https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/mcp/qover-mcp.yml)
+
+## Auth
+
+- API key in the request header. Sandbox key issued first during onboarding; production key issued after review via a secure protocol. Request access at https://www.qover.com/api-access.

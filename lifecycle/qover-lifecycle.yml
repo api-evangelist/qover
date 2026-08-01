@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qover.com/
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: Resource paths carry the version (e.g. /claims/v1/claims, /dam/v1/assets).
+deprecation:
+  policy_url: null
+  sunset_header: null
+  detail: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  detail: SLA/uptime targets are agreed per partner contract; public status page publishes uptime history.
+status_page:
+  url: https://status.qover.com/
+  provider: Better Stack
+  monitored:
+  - API health check CLAIMS
+  - API health check POLICIES
+  - API health check BIKE
+  - API health check IAB
+  - API health check TENANT
+  - Landing (qover.com, claims login, generic refund request)
+  - Flow (Tesla, Tenant, homeowner)
+  detail: >-
+    Public status page (Better Stack) publishing ~90 days of component uptime;
+    most API components report 100% uptime.
+trust_center: https://trust.qover.com/
+deprecated_operations: []

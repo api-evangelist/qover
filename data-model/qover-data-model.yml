@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  Derived from Qover's public API documentation (endpoints and example webhook
+  payload, docs.qover.com). No OpenAPI is published; entities are inferred from
+  documented resources and payload fields.
+entities:
+- name: Claim
+  description: An insurance claim filed against a policy.
+  key_fields: [id, version, claimNumber, reference, customerId, policyNumber, country]
+  relationships:
+  - { type: belongs_to, target: ProductConfiguration, via: productConfiguration }
+  - { type: belongs_to, target: Partner, via: partner }
+  - { type: has_one, target: ClaimStatus, via: status }
+  - { type: has_many, target: ClaimStatus, via: statuses (history) }
+  - { type: has_many, target: Asset, via: attachments }
+  - { type: belongs_to, target: Policy, via: policyNumber }
+- name: ClaimStatus
+  description: The status of a claim at a point in time.
+  key_fields: [code, category, name]
+- name: ProductConfiguration
+  description: Per-partner product configuration that drives API behaviour and validation schemas.
+  key_fields: [id, version, product]
+- name: Partner
+  description: The distributing brand/partner the claim belongs to.
+  key_fields: [id, name]
+- name: Policy
+  description: An insurance policy; managed via the Policy API (add/remove risk items dynamically).
+  key_fields: [policyNumber]
+  relationships:
+  - { type: has_many, target: RiskItem, via: risk-items }
+- name: RiskItem
+  description: An insured property/subject on a policy (also called "subject").
+- name: Asset
+  description: A document asset (claim attachment) managed via the Document Asset Management API.
+  key_fields: [id, uploadURL]
+  relationships:
+  - { type: belongs_to, target: Claim, via: claim }
+notes:
+- Entity/field names captured from documented endpoints and the example webhook payload.

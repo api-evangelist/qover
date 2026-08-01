@@ -1,0 +1,55 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qover.com/
+summary: >-
+  Cross-cutting request/response semantics for Qover's REST API, captured from the
+  published Qover API documentation (Postman) and its example requests/responses.
+authentication:
+  style: api-key
+  location: header
+  detail: See authentication/qover-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: Resource paths are versioned in the URI (e.g. /claims/v1/claims).
+pagination:
+  style: page-number
+  params:
+  - page
+  - size
+  - sort
+  - sortDirection
+  detail: >-
+    List endpoints accept page (1-based), size, sort (field) and sortDirection
+    (asc|desc) query parameters.
+hypermedia:
+  style: HAL
+  detail: >-
+    Resources and webhook payloads include a `_links` object with `self.href`
+    references (HAL-style hypermedia).
+configuration_context:
+  detail: >-
+    API behaviour is scoped by per-partner product configuration - responses and
+    validation schemas vary by `product` and `country` (e.g. product=FINTECHX,
+    country=BE). A claim references its productConfiguration (id, version, product).
+webhooks:
+  detail: >-
+    Configurable outbound webhooks fire on claim status changes. See
+    asyncapi/qover-webhooks.yml.
+documents:
+  detail: >-
+    Binary artifacts (claim attachments, claim report PDFs) are handled via the
+    Document Asset Management API: create an asset to obtain a signed upload URL,
+    PUT the file, then reference the asset on the claim.
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency-key mechanism is documented in the public Qover API
+    documentation as of this capture.
+rate_limiting:
+  detail: Not documented in the public API documentation.
+cross_links:
+- authentication/qover-authentication.yml
+- asyncapi/qover-webhooks.yml
+- lifecycle/qover-lifecycle.yml
+- data-model/qover-data-model.yml

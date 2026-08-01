@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: searched
+probe: true
+source: https://trust.qover.com/
+url: https://trust.qover.com/
+certifications:
+- ISO 27001
+evidence:
+- source: https://trust.qover.com/
+  keywords:
+  - iso 27001
+  - trust center

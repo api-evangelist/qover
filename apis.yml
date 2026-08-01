@@ -1,8 +1,17 @@
 aid: qover
 name: Qover
-description: 'Qover is a company surfaced as a portfolio company of anthemis and added to the API Evangelist
-  network as a stub for enrichment. Sector: insurtech. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Qover is a Brussels-based insurtech providing an API-first embedded insurance
+  orchestration platform used across 32 European countries. Its modular platform
+  lets brands, fintechs and insurers configure and distribute insurance products
+  (travel, mobility, bike, purchase protection, accident, property) and run the
+  full lifecycle from policy configuration and issuance through AI-assisted claims
+  and multilingual customer care. Qover exposes REST APIs - a Claims API, a Policy
+  API and a Document Asset Management API - secured with API keys, with a sandbox
+  environment, configurable webhooks for claim status changes, and per-partner
+  product configuration. Founded in 2016, Qover reports serving 440+ brands and
+  insurers covering millions of people, and is an ISO-certified company with a
+  Vanta-hosted trust center.
 url: https://raw.githubusercontent.com/api-evangelist/qover/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,15 +19,116 @@ x-backed-by:
 - anthemis
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://qover.com/favicon.ico
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Insurtech
-apis: []
+- Insurance
+- Embedded Insurance
+- Claims
+- Policy
+- API
+- Fintech
+- Belgium
+apis:
+- name: Qover Embedded Insurance API
+  description: >-
+    Qover's REST API for embedded insurance: a Claims API (file, retrieve, track
+    status history, and download claim reports), a Policy API (manage policies and
+    dynamically add/remove risk items), and a Document Asset Management (DAM) API
+    for claim attachments. Authenticated with API keys in the request header,
+    versioned in the URI path (v1), with configurable webhooks for claim status
+    changes. Product/country behaviour is driven by per-partner product
+    configuration (e.g. FINTECHX, BE).
+  humanURL: https://docs.qover.com/
+  baseURL: https://api.sbx.qover.io
+  tags:
+  - Insurance
+  - Claims
+  - Policy
+  - Embedded Insurance
+  properties:
+  - type: Documentation
+    url: https://docs.qover.com/
+  - type: APIReference
+    url: https://docs.qover.com/
+  - type: Postman
+    url: https://docs.qover.com/
+  - type: Authentication
+    url: authentication/qover-authentication.yml
+  - type: Sandbox
+    url: sandbox/qover-sandbox.yml
+  - type: Conventions
+    url: conventions/qover-conventions.yml
+  - type: Webhooks
+    url: asyncapi/qover-webhooks.yml
+  - type: MCPServer
+    url: mcp/qover-mcp.yml
+  - type: DataModel
+    url: data-model/qover-data-model.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+common:
+- type: TrustCenter
+  url: security/qover-trust-center.yml
+- type: DomainSecurity
+  url: security/qover-domain-security.yml
+- type: DeveloperPortal
+  url: https://docs.qover.com/
+- type: Documentation
+  url: https://docs.qover.com/
+- type: APIReference
+  url: https://docs.qover.com/
+- type: GettingStarted
+  url: https://www.qover.com/api-access
+- type: Postman
+  url: https://docs.qover.com/
+- type: Blog
+  url: https://qover.com/blog
+- type: Pricing
+  url: https://qover.com/pricing
+- type: SignUp
+  url: https://www.qover.com/api-access
+- type: Support
+  url: https://qover.com/get-in-touch
+- type: TermsOfService
+  url: https://storage.googleapis.com/qover-assets/documents/terms/Terms-of-use_EN.pdf
+- type: PrivacyPolicy
+  url: https://storage.googleapis.com/qover-assets/documents/policies/Privacy%20Policy_EN_v.04_2026.pdf
+- type: StatusPage
+  url: https://status.qover.com/
+- type: Compliance
+  url: https://trust.qover.com/
+- type: Lifecycle
+  url: lifecycle/qover-lifecycle.yml
+- type: Conformance
+  url: conformance/qover-conformance.yml
+- type: Authentication
+  url: authentication/qover-authentication.yml
+- type: LLMsTxt
+  url: llms/qover-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1
