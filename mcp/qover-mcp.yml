@@ -1,9 +1,8 @@
 generated: '2026-07-20'
 method: derived
 status: candidate
-source: >-
-  Derived from operations in Qover's public API documentation (Qover API Postman
-  collection, docs.qover.com). No official hosted/remote MCP server was found.
+source: Derived from operations in Qover's public API documentation (Qover API Postman collection, docs.qover.com).
+  No official hosted/remote MCP server was found.
 server:
   name: qover
   transport: http
@@ -30,3 +29,9 @@ tools:
 notes:
 - Candidate tool list only; not an official Qover MCP server.
 - Authentication is via API key in the request header (see authentication/qover-authentication.yml).
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
