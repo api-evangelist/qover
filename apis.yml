@@ -107,6 +107,8 @@ apis:
   - type: AgentSkill
     url: skills/_index.yml
 common:
+- type: Website
+  url: https://www.qover.com/
 - type: TrustCenter
   url: security/qover-trust-center.yml
 - type: DomainSecurity
